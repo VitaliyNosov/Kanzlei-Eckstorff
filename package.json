@@ -1,0 +1,16 @@
+{
+  "name": "landing-page",
+  "version": "1.0.0",
+  "description": "Kanzlei Eckstorff Landing Page",
+  "main": "js/main.js",
+  "scripts": {
+    "start": "npm-run-all --parallel watch server",
+    "watch": "sass --watch scss/main.scss:css/main.css --no-source-map",
+    "server": "browser-sync start --server --files \"css/*.css, *.html, js/*.js\""
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.70.0"
+  }
+}

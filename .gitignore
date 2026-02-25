@@ -1,0 +1,26 @@
+# Dependency Directories
+node_modules/
+
+# IDE / Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Specific Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and Temps
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.sass-cache/
+.eslintcache
+
+# Project specific (assuming these are reference images/screenshots)
+bags/
+FireShot*.png
+*.webp
+*.png_backup

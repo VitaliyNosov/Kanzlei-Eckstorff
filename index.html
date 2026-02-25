@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanzlei Eckstorff - Strafverteidigung & Beratung</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="img/KE_Logo_White.png" alt="Kanzlei Eckstorff Logo">
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu öffnen">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#blog">Aktuelles</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero Dynamic Text -->
+        <section class="hero" style="background-image: url('img/bg_arch.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Kanzlei Eckstorff</span>
+
+                    <div class="hero-dynamic-text">
+                        <!-- Item 1 -->
+                        <div class="hero-content-item active">
+                            <h1 class="text-reveal">Steuer&shy;strafrecht</h1>
+                            <p class="text-reveal delay-200">Ihr Strafverteidiger für professionelle und vorausschauende
+                                Vertretung in Berlin und
+                                bundesweit.</p>
+                            <a href="#contact" class="btn">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hero-content-item">
+                            <h1 class="text-reveal">Medien&shy;strafrecht</h1>
+                            <p class="text-reveal delay-200">Kompetente Verteidigung im Spannungsfeld von Medien und
+                                Strafrecht.</p>
+                            <a href="#contact" class="btn text-reveal delay-300">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hero-content-item">
+                            <h1 class="text-reveal">Kanzlei Eckstorff</h1>
+                            <p class="text-reveal delay-200">Bedingungslose Spezialisierung. Maximale
+                                Durchsetzungskraft. Exzellente
+                                Verteidigung.</p><a href="#contact" class="btn">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="hero-content-item">
+                            <h1 class="text-reveal">Wirtschafts&shy;strafrecht</h1>
+                            <p class="text-reveal delay-200">Kompetente Beratung in allen Fragen des Wirtschafts- und
+                                Steuerstrafrechts.</p>
+                            <a href="#contact" class="btn text-reveal delay-300">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="hero-content-item">
+                            <h1 class="text-reveal">Vorenthalten von Sozial&shy;versicherungs&shy;beiträgen</h1>
+                            <p class="text-reveal delay-200">Sichere Verteidigungsstrategien bei Vorwürfen nach § 266a
+                                StGB.</p>
+                            <a href="#contact" class="btn text-reveal delay-300">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="hero-content-item">
+                            <h1 class="text-reveal">Krypto&shy;strafrecht</h1>
+                            <p class="text-reveal delay-200">Rechtsvertretung und Expertise im modernen Bereich der
+                                Kryptowährungen.</p>
+                            <a href="#contact" class="btn text-reveal delay-300">Termin vereinbaren <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-sidebar">
+                    <div class="hero-form-container">
+                        <div class="hero-form-header">
+                            <h3>Kostenlose Erstberatung</h3>
+                        </div>
+                        <form action="#" class="hero-form">
+                            <div class="hero-form-group">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="hero-form-group">
+                                <input type="email" placeholder="E-Mail" required>
+                            </div>
+                            <div class="hero-form-group">
+                                <input type="tel" placeholder="Telefon" required>
+                            </div>
+                            <button type="submit" class="hero-form-btn">Jetzt anfragen</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: About Us -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="img/man.jpg" alt="Anwalt Portrait">
+                    </div>
+                    <div class="about-text">
+                        <h2 class="text-reveal">Strafverteidigung: spezialisiert, individuell, dynamisch.</h2>
+                        <p class="text-reveal delay-100">In der Kanzlei Eckstorff gehört die bedingungslose
+                            Spezialisierung auf das Straf- und
+                            Ordnungswidrigkeitenrecht ebenso zum Selbstverständnis, wie das uneingeschränkte Bekenntnis
+                            zu dem Grundsatz, dass jede beschuldigte Person bis zur gerichtlichen Feststellung des
+                            Gegenteils als unschuldig gilt.</p>
+                        <p class="text-reveal delay-200">Im Mittelpunkt der Verteidigertätigkeit stehen daher von der
+                            ersten Stunde des Verfahrens bis
+                            zum Verfahrensabschluss immer die Belange der Mandantinnen und Mandanten.</p>
+                        <a href="#contact" class="btn text-reveal delay-300">Mehr über uns</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Services Tiles -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="text-reveal">Unsere Leistungen</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h3 class="text-reveal">Wirtschaftsstrafrecht</h3>
+                        <p class="text-reveal delay-100">Verteidigung in komplexen Wirtschaftsstrafverfahren und
+                            Steuerstrafsachen.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-gavel"></i>
+                        <h3 class="text-reveal">Allgemeines Strafrecht</h3>
+                        <p class="text-reveal delay-100">Kompetente Vertretung in allen Bereichen des Kernstrafrechts.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-pills"></i>
+                        <h3 class="text-reveal">Betäubungsmittelstrafrecht</h3>
+                        <p class="text-reveal delay-100">Spezialisierte Verteidigung bei Verstößen gegen das BtMG.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-car-burst"></i>
+                        <h3 class="text-reveal">Verkehrsstrafrecht</h3>
+                        <p class="text-reveal delay-100">Unterstützung bei Verkehrsstraftaten und Ordnungswidrigkeiten.
+                        </p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-file-contract"></i>
+                        <h3 class="text-reveal">Revisionsrecht</h3>
+                        <p class="text-reveal delay-100">Überprüfung von Urteilen und professionelle Vertretung in der
+                            Revisionsinstanz.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <h3 class="text-reveal">Compliance</h3>
+                        <p class="text-reveal delay-100">Präventive rechtliche Beratung von Unternehmen zur Vermeidung
+                            strafrechtlicher Risiken.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Expertise Tabs -->
+        <section id="expertise" class="expertise">
+            <div class="container">
+                <div class="expertise-layout">
+                    <!-- Left: Vertical Tabs -->
+                    <div class="tab-headers">
+                        <button class="tab-btn active" data-tab="strategy">Strategie</button>
+                        <button class="tab-btn" data-tab="experience">Erfahrung</button>
+                        <button class="tab-btn" data-tab="philosophy">Philosophie</button>
+                    </div>
+
+                    <!-- Middle: Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="strategy">
+                            <h3 class="text-reveal">Individuelle Strategie</h3>
+                            <p class="text-reveal delay-100">Jeder Fall erfordert einen maßgeschneiderten Ansatz. Wir
+                                entwickeln gemeinsam mit Ihnen
+                                die beste Verteidigungsstrategie. Mit Präzision и профессионализмом мы находим путь к
+                                успеху.</p>
+                            <a href="#contact" class="btn text-reveal delay-200">Mehr erfahren</a>
+                        </div>
+                        <div class="tab-pane" id="experience">
+                            <h3 class="text-reveal">Langjährige Erfahrung</h3>
+                            <p class="text-reveal delay-100">Durch zahlreiche verhandelte Fälle verfügen wir über die
+                                notwendige Erfahrung vor Gericht
+                                und in Verhandlungen mit der Staatsanwaltschaft. Vertrauen Sie auf Kompetenz.</p>
+                            <a href="#contact" class="btn text-reveal delay-200">Mehr erfahren</a>
+                        </div>
+                        <div class="tab-pane" id="philosophy">
+                            <h3 class="text-reveal">Klare Werte</h3>
+                            <p class="text-reveal delay-100">Transparenz, Loyalität und Diskretion sind die Säulen
+                                unserer Zusammenarbeit mit Ihnen.
+                                Wir stehen uneingeschränkt an Ihrer Seite.</p>
+                            <a href="#contact" class="btn text-reveal delay-200">Mehr erfahren</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Philosophy Section -->
+        <section class="philosophy">
+            <div class="container">
+                <div class="philosophy-content">
+                    <h2 class="text-reveal">"Wir kämpfen für Ihr Recht – mit Leidenschaft und höchster Präzision."</h2>
+                    <p class="text-reveal delay-100">In jedem Verfahren steht für uns der Mensch im Mittelpunkt. Wir
+                        bieten Ihnen nicht nur
+                        juristische Expertise, sondern einen verlässlichen Partner an Ihrer Seite.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Stats Counter -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number text-reveal"><span class="counter" data-target="15">0</span>+</span>
+                        <span class="stat-label text-reveal delay-100">Jahre Erfahrung</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number text-reveal"><span class="counter" data-target="500">0</span>+</span>
+                        <span class="stat-label text-reveal delay-100">Erfolgreiche Fälle</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number text-reveal"><span class="counter" data-target="100">0</span>%</span>
+                        <span class="stat-label text-reveal delay-100">Engagement</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number text-reveal"><span class="counter" data-target="24">0</span>/7</span>
+                        <span class="stat-label text-reveal delay-100">Erreichbarkeit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="team-grid">
+                    <div class="team-info">
+                        <h2 class="text-reveal">Kanzlei Eckstorff</h2>
+                        <span class="title text-reveal delay-100">Ihr Strafverteidiger</span>
+                        <p class="text-reveal delay-200">Mit fundiertem Wissen und strategischem Geschick setzen wir uns
+                            für Ihre Interessen ein.
+                            Unsere Kanzlei steht für Klarheit, Durchsetzungskraft und individuelle Betreuung in
+                            jeder Phase Ihres Verfahrens.</p>
+                        <ul style="list-style: none; margin-bottom: 20px;" class="text-reveal delay-300">
+                            <li>Individuelle Verteidigungsstrategien</li>
+                            <li>Schnelle Reaktionszeiten</li>
+                            <li>Absolute Diskretion</li>
+                        </ul>
+                    </div>
+                    <div class="team-image">
+                        <img src="img/Portrait_second.jpg" alt="Anwalt Portrait Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: FAQ Accordion -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+                    <h2 class="text-reveal">Häufig gestellte Fragen</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question text-reveal">Wie schnell erhalte ich einen Termin?</div>
+                        <div class="faq-answer">
+                            <p class="text-reveal delay-100">In dringenden Fällen (Verhaftung, Durchsuchung) sind wir
+                                rund um die Uhr für Sie
+                                erreichbar. Reguläre Erstberatungstermine vergeben wir meist innerhalb von 24-48
+                                Stunden.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question text-reveal">Welche Kosten kommen auf mich zu?</div>
+                        <div class="faq-answer">
+                            <p class="text-reveal delay-100">Die Vergütung erfolgt entweder nach dem
+                                Rechtsanwaltsvergütungsgesetz (RVG) oder
+                                über eine individuelle Honorarvereinbarung. Wir klären die Kostenfrage
+                                transparent im ersten Gespräch.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question text-reveal">Übernehmen Sie auch Pflichtverteidigungen?</div>
+                        <div class="faq-answer">
+                            <p class="text-reveal delay-100">Ja, unter den gesetzlichen Voraussetzungen übernehmen wir
+                                auch Vertretungen als
+                                gerichtlich bestellte Pflichtverteidiger.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Blog / Aktuelles -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <div class="section-title" style="text-align: center; margin-bottom: 50px;">
+                    <h2 class="text-reveal">Aktuelles</h2>
+                </div>
+                <div class="blog-grid">
+                    <!-- Post 1 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/post-img.jpeg" alt="Blog Post 1">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date text-reveal">24. Februar 2026</span>
+                            <h3 class="text-reveal delay-100"><a href="posts-template.html">Neue Entwicklungen im
+                                    Steuerstrafrecht</a></h3>
+                            <p class="text-reveal delay-200">Ein kurzer Einblick in die aktuellen Änderungen der
+                                Gesetzgebung und was diese für
+                                Unternehmer bedeuten.</p>
+                            <a href="posts-template.html" class="read-more text-reveal delay-300">Weiterlesen <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Post 2 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/man.jpg" alt="Blog Post 2">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date text-reveal">10. Januar 2026</span>
+                            <h3 class="text-reveal delay-100"><a href="posts-template.html">Verhalten bei einer
+                                    Hausdurchsuchung</a></h3>
+                            <p class="text-reveal delay-200">Verlieren Sie nicht die Nerven. Erfahren Sie, welche Rechte
+                                Sie haben und wie Sie sich im
+                                Ernstfall verhalten sollten.</p>
+                            <a href="posts-template.html" class="read-more text-reveal delay-300">Weiterlesen <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <!-- Post 3 -->
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/Portrait_second.jpg" alt="Blog Post 3">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date text-reveal">15. Dezember 2025</span>
+                            <h3 class="text-reveal delay-100"><a href="posts-template.html">Kryptowährungen im Visier
+                                    der Fahndung</a></h3>
+                            <p class="text-reveal delay-200">Immer mehr Anleger geraten ins Visier der Behörden. Ein
+                                Leitfaden zur Selbstanzeige und
+                                Prävention.</p>
+                            <a href="posts-template.html" class="read-more text-reveal delay-300">Weiterlesen <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Contact Form -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="text-reveal">Kontaktieren Sie uns</h2>
+                        <p class="text-reveal delay-100">Haben Sie Fragen oder benötigen Sie sofortigen rechtlichen
+                            Beistand? Wir sind für Sie
+                            da.</p>
+                        <div class="info-item text-reveal delay-200">
+                            <span>Kurfürstendamm 66 | 10707 Berlin</span>
+                        </div>
+                        <div class="info-item text-reveal delay-300">
+                            <span>Tel: 030 346 46 80 90</span>
+                        </div>
+                        <div class="info-item text-reveal delay-400">
+                            <span>Email: kanzlei@kanzlei-eckstorff.de</span>
+                        </div>
+                        <div class="info-item text-reveal delay-500">
+                            <span>Öffnungszeiten: MO - FR 09:00 - 17:30</span>
+                        </div>
+                    </div>
+                    <div id="map" class="contact-map"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script>
+            // Initialize the map
+            document.addEventListener('DOMContentLoaded', function () {
+                var map = L.map('map', {
+                    scrollWheelZoom: false,
+                    dragging: !L.Browser.mobile
+                }).setView([52.502013, 13.305146], 15); // Kurfürstendamm 66 coordinates
+
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                // Custom SVG Marker in accent color #365A72
+                var iconHtml = `
+                    <div class="marker-pulse-wrapper">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 0C11.16 0 4 7.16 4 16C4 28 20 40 20 40C20 40 36 28 36 16C36 7.16 28.84 0 20 0ZM20 22C16.68 22 14 19.32 14 16C14 12.68 16.68 10 20 10C23.32 10 26 12.68 26 16C26 19.32 23.32 22 20 22Z" fill="#365A72"/>
+                            <circle cx="20" cy="16" r="4" fill="white"/>
+                        </svg>
+                    </div>`;
+
+                var customIcon = L.divIcon({
+                    html: iconHtml,
+                    className: 'custom-map-marker',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40],
+                    popupAnchor: [0, -45] // Shifting popup up to not cover the pin
+                });
+
+                L.marker([52.502013, 13.305146], { icon: customIcon }).addTo(map)
+                    .bindPopup('<b>Kanzlei Eckstorff</b><br>Kurfürstendamm 66, 10707 Berlin')
+                    .openPopup();
+            });
+        </script>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="img/KE_Logo_White.png" alt="Logo" style="height: 40px; margin-bottom: 20px;">
+                    <p class="text-reveal">Ihre Experten für Strafrecht in Berlin.</p>
+                    <div class="footer-socials text-reveal delay-100">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="E-Mail"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-reveal">Navigation</h4>
+                    <ul class="text-reveal delay-100">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#services">Leistungen</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#blog">Aktuelles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="text-reveal">Rechtliches</h4>
+                    <ul class="text-reveal delay-100">
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KANZLEI ECKSTORFF. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

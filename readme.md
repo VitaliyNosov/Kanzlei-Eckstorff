@@ -2,6 +2,9 @@
 
 ![Project Banner](img/github-bg.PNG)
 
+**🌐 [Live Demo](https://ephemeral-gecko-fad2d3.netlify.app/)**
+
+
 ## Overview
 A modern, premium landing page for **Kanzlei Eckstorff**, a specialized law firm based in Berlin. The project focus is on criminal law defense (Strafverteidigung) with a particular emphasis on tax criminal law (Steuerstrafrecht).
 

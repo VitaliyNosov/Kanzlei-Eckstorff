@@ -1,0 +1,368 @@
+/* Kryptostrafrecht - Creative Professional Style */
+
+$crypto-accent: #365A72; /* User Request: Shift back to Brand Blue */
+
+.crypto-page {
+    background-color: $primary-color;
+    color: $text-color;
+
+    h1, h2, h3 {
+        font-family: $font-heading;
+        color: $secondary-color;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: $crypto-accent;
+        }
+
+        &.centered {
+            &::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    /* Common Section Spacing */
+    section {
+        padding: 100px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+    }
+
+    /* CREATIVE OVERLAP HERO (Unique from Home) */
+    .hero.crypto-hero-creative {
+        height: 100vh;
+        min-height: 800px;
+        background-color: #fdfdfd;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 0; /* Override section padding */
+
+        @media (max-width: 992px) { height: auto; padding: 120px 0; }
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('../img/bg_arch.jpg'); 
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, #fdfdfd 0%, rgba($secondary-color, 0.4) 100%);
+            }
+
+            @media (max-width: 992px) { width: 100%; opacity: 0.15; }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 40px 0;
+
+            .hero-badge-wrap {
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                .line { width: 40px; height: 2px; background: $crypto-accent; }
+                span { text-transform: uppercase; letter-spacing: 3px; font-weight: 700; color: $crypto-accent; font-size: 0.85rem; }
+            }
+
+            h1 {
+                font-size: clamp(3rem, 7vw, 5.5rem);
+                line-height: 0.95;
+                margin-bottom: 30px;
+                color: $secondary-color;
+                span { display: block; color: $crypto-accent; font-style: italic; }
+            }
+
+            p {
+                font-size: 1.4rem;
+                line-height: 1.7;
+                color: $text-color;
+                margin-bottom: 50px;
+                max-width: 600px;
+                @media (max-width: 768px) { font-size: 1.1rem; }
+            }
+
+            .hero-actions {
+                display: flex;
+                gap: 30px;
+                @media (max-width: 576px) { flex-direction: column; gap: 15px; }
+            }
+        }
+    }
+
+    /* Emergency Section */
+    .crypto-emergency {
+        background-color: #f8f9fa;
+        padding: 140px 0;
+        @media (max-width: 768px) { padding: 80px 0; }
+
+        .emergency-card {
+            background-color: #fff;
+            padding: 80px;
+            border-radius: 4px;
+            border-top: 10px solid $crypto-accent; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            @media (max-width: 768px) { padding: 40px 20px; }
+        }
+
+        .emergency-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        .step-item {
+            .step-num { font-size: 3.5rem; font-family: $font-heading; color: rgba($crypto-accent, 0.1); display: block; margin-bottom: -15px; }
+            h4 { color: $secondary-color; font-size: 1.5rem; margin-bottom: 15px; }
+            p { font-size: 1.05rem; opacity: 0.8; }
+        }
+    }
+
+    /* Expertise Pillars */
+    .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 768px) { grid-template-columns: 1fr; }
+    }
+
+    /* Platforms */
+    .crypto-platforms {
+        background-color: $secondary-color;
+        color: #fff;
+        h2 { color: #fff; &::after { background-color: $crypto-accent; } }
+        
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            @media (max-width: 992px) { grid-template-columns: repeat(2, 1fr); }
+            @media (max-width: 576px) { grid-template-columns: 1fr; }
+        }
+
+        .logo-item {
+            background: rgba(255,255,255,0.05);
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 4px;
+            transition: $transition;
+            i { font-size: 3.5rem; color: $crypto-accent; margin-bottom: 20px; display: block; }
+            span { font-weight: 700; opacity: 0.8; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+            &:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+        }
+    }
+
+    /* Forensics */
+    .crypto-forensics {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 80px 0; }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 50px; }
+        }
+    }
+
+    /* Success Stories */
+    .crypto-success {
+        background-color: #f8f9fa;
+        .success-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            @media (max-width: 768px) { grid-template-columns: 1fr; }
+        }
+    }
+
+    /* Professional Grid Cards Styling */
+    .pillar-card, .success-card, .faq-item, .myth-box {
+        background-color: #fff;
+        padding: 50px 40px;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: $transition;
+        
+        i { font-size: 3rem; color: $crypto-accent; margin-bottom: 30px; display: block; }
+        h3 { font-size: 1.6rem; margin-bottom: 20px; }
+        p { font-size: 1.1rem; color: $text-color; }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: $crypto-accent;
+        }
+
+        @media (max-width: 576px) { padding: 30px 25px; }
+    }
+
+    .success-card {
+        border-top: 4px solid $crypto-accent !important;
+        .success-label { color: $crypto-accent !important; font-weight: 800; }
+    }
+
+    /* Myths (Direct Comparison) */
+    .myths-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        @media (max-width: 768px) { grid-template-columns: 1fr; }
+        .myth-box {
+            position: relative;
+            border-left: 5px solid $crypto-accent !important;
+            .myth-label { position: absolute; top: 15px; right: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: $crypto-accent; opacity: 0.6; }
+        }
+    }
+
+    /* FAQ */
+    .faq-grid {
+        display: grid;
+        gap: 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    /* Compliance Banner */
+    .compliance-banner {
+        background: linear-gradient(90deg, $secondary-color, darken($secondary-color, 10%));
+        color: #fff;
+        padding: 80px 60px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        border-left: 8px solid $crypto-accent;
+        @media (max-width: 992px) { flex-direction: column; text-align: center; padding: 50px 30px; }
+        h2 { color: #fff; border: none; font-size: 2.5rem; margin-bottom: 0; &::after { display: none; } }
+        
+        .btn { background: $crypto-accent !important; color: #fff !important; margin-top: 0; }
+    }
+
+    /* CTA Section */
+    .contact-cta-unique {
+        padding: 120px 0;
+        background: #1a2a3a;
+        color: #fff;
+        text-align: center;
+        @media (max-width: 768px) { padding: 80px 0; }
+
+        h2 { color: #fff; border: none; font-size: 3rem; @media (max-width: 768px) { font-size: 2.2rem; } }
+        .cta-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            @media (max-width: 576px) { flex-direction: column; align-items: center; }
+        }
+    }
+
+    /* Utility Helpers */
+    .text-center { text-align: center; }
+    .mt-40 { margin-top: 40px; }
+    .mb-60 { margin-bottom: 60px; @media (max-width: 768px) { margin-bottom: 40px; } }
+}
+
+/* Footer Fixes */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        transition: $transition;
+        font-size: 1.1rem;
+
+        &:hover {
+            background-color: $crypto-accent;
+            transform: translateY(-3px);
+            color: #fff;
+        }
+    }
+}
+
+/* Blog Styles (Now using #365A72) */
+.blog {
+    background-color: #f8f9fa;
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        @media (max-width: 992px) { grid-template-columns: 1fr; }
+    }
+}
+
+.blog-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: $transition;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .blog-image {
+        height: 200px;
+        overflow: hidden;
+        img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    }
+
+    &:hover .blog-image img { transform: scale(1.1); }
+
+    .blog-content {
+        padding: 30px;
+        .blog-date { font-size: 0.85rem; color: $crypto-accent; font-weight: 700; margin-bottom: 10px; display: block; }
+        h3 { font-size: 1.4rem; margin-bottom: 15px; a { color: $secondary-color; text-decoration: none; &:hover { color: $crypto-accent; } } }
+        p { font-size: 1rem; color: $text-color; margin-bottom: 20px; }
+        .read-more { color: $crypto-accent; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 10px; i { font-size: 0.9rem; } }
+    }
+}

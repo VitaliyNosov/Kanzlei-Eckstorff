@@ -1,0 +1,262 @@
+@import 'variables';
+
+.sozial-page {
+    $sozial-primary: #1A2D42;
+    $sozial-accent: #2c3e50;
+    $sozial-silver: #A8B2BD;
+
+    // DECORATIVE GRID PATTERN (Unique Diagonal for Social)
+    @mixin grid-overlay-sozial {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='40' x2='40' y2='0' stroke='white' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            z-index: 1;
+            pointer-events: none;
+        }
+        & > * { position: relative; z-index: 2; }
+    }
+
+    // HERO SECTION
+    .sozial-hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        background-color: #0d1218;
+        overflow: hidden;
+        padding: 0;
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($sozial-primary, 1), rgba($secondary-color, 0.9));
+            z-index: 1;
+            clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/bg_law.jpg'); 
+                background-size: cover;
+                background-position: center;
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 100px 0;
+            position: relative;
+            z-index: 2;
+
+            .hero-badge-wrap {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 35px;
+                .line { width: 45px; height: 2px; background-color: $sozial-silver; }
+                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $sozial-silver; }
+            }
+
+            h1 {
+                font-size: clamp(2.8rem, 6vw, 4.5rem);
+                margin-bottom: 35px;
+                line-height: 1.1;
+                color: #fff;
+                font-weight: 900;
+                span { color: $sozial-silver; display: inline-block; }
+            }
+
+            p {
+                font-size: 1.25rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-bottom: 50px;
+                line-height: 1.8;
+                max-width: 600px;
+            }
+        }
+    }
+
+    // COMPETENCIES (Light)
+    .sozial-pillars {
+        padding: 120px 0;
+        background-color: #fff;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            @media (max-width: 992px) { grid-template-columns: 1fr; }
+        }
+
+        .pillar-card {
+            background: #fcfcfc;
+            padding: 50px 40px;
+            border-bottom: 4px solid transparent;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+            transition: $transition;
+            i { font-size: 2.5rem; color: $sozial-primary; margin-bottom: 25px; display: block; }
+            h3 { font-size: 1.3rem; margin-bottom: 20px; color: $secondary-color; }
+            p { font-size: 0.95rem; opacity: 0.8; line-height: 1.6; }
+            &:hover { 
+                transform: translateY(-10px); 
+                background: #fff;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.06); 
+                border-bottom: 4px solid $sozial-primary;
+            }
+        }
+    }
+
+    // RISK MANAGEMENT (Dark + Grid)
+    .sozial-risk {
+        padding: 120px 0;
+        background-color: $sozial-primary;
+        color: #fff;
+        @include grid-overlay-sozial;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+        }
+
+        h2 { color: #fff; font-size: 3rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2.2rem; } }
+        .feature-list {
+            list-style: none;
+            li { display: flex; gap: 15px; margin-bottom: 20px; i { color: $sozial-silver; } span { opacity: 0.9; } }
+        }
+        .risk-image { img { width: 100%; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); } }
+    }
+
+    // SCHEINSELBSTSTÄNDIGKEIT (Light)
+    .sozial-scheinselbst {
+        padding: 120px 0;
+        background-color: #f8f9fa;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .schein-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; display: flex; flex-direction: column-reverse; }
+        }
+
+        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2rem; } }
+        .schein-image { position: relative; img { width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); } }
+    }
+
+    // ERMITTLUNG (Dark + Grid)
+    .sozial-investigation {
+        padding: 120px 0;
+        background-color: $sozial-primary;
+        color: #fff;
+        @include grid-overlay-sozial;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .invest-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 60px;
+            border-radius: 12px;
+            border: 1px solid rgba($sozial-silver, 0.1);
+            @media (max-width: 768px) { padding: 40px 25px; }
+
+            .invest-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                @media (max-width: 992px) { grid-template-columns: 1fr; }
+                .invest-item {
+                    i { font-size: 2rem; color: $sozial-silver; margin-bottom: 20px; display: block; }
+                    h4 { margin-bottom: 15px; color: #fff; }
+                    p { font-size: 0.95rem; opacity: 0.7; }
+                }
+            }
+        }
+    }
+
+    // INDUSTRY FOCUS (Light)
+    .sozial-industry {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            @media (max-width: 992px) { grid-template-columns: 1fr 1fr; }
+            @media (max-width: 576px) { grid-template-columns: 1fr; }
+            .ind-card {
+                padding: 30px;
+                background: #fff;
+                border: 1px solid #eee;
+                text-align: center;
+                transition: $transition;
+                i { font-size: 2rem; color: $sozial-primary; margin-bottom: 15px; display: block; }
+                span { font-weight: 700; color: $secondary-color; }
+                &:hover { border-color: $sozial-primary; background: #fafafa; }
+            }
+        }
+    }
+
+    // CTA
+    .sozial-cta {
+        padding: 120px 0;
+        .cta-box {
+            background: $sozial-primary;
+            padding: 80px;
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+            @include grid-overlay-sozial;
+            @media (max-width: 768px) { padding: 50px 30px; }
+            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            .cta-actions { display: flex; justify-content: center; gap: 40px; margin-top: 40px; @media (max-width: 768px) { flex-direction: column; gap: 20px; } }
+        }
+    }
+
+    // BUTTONS
+    .btn-sozial {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        background-color: $sozial-primary;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: $transition;
+        &:hover { background-color: lighten($sozial-primary, 10%); transform: translateY(-3px); color: #fff; }
+    }
+
+    .btn-sozial-silver {
+        display: inline-flex;
+        align-items: center; gap: 10px;
+        padding: 16px 35px;
+        background-color: $sozial-silver;
+        color: $sozial-primary;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 800;
+        transition: $transition;
+        &:hover { background-color: #fff; transform: translateY(-3px); color: $sozial-primary; }
+    }
+}

@@ -1,0 +1,313 @@
+@import 'variables';
+
+.steuer-page {
+    $steuer-primary: #1A2D42; // Same as Wirtschaft for brand unity
+    $steuer-accent: #45677d; 
+    $steuer-silver: #A8B2BD;
+
+    // DECORATIVE GRID PATTERN
+    @mixin grid-overlay {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 L20 20 L20 0' fill='none' stroke='white' stroke-width='0.5' opacity='0.03'/%3E%3C/svg%3E");
+            z-index: 1;
+            pointer-events: none;
+        }
+        & > * { position: relative; z-index: 2; }
+    }
+
+    // HERO SECTION
+    .steuer-hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        background-color: #0c151f;
+        overflow: hidden;
+        padding: 0;
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($steuer-primary, 1), rgba($secondary-color, 0.9));
+            z-index: 1;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/bg_law.jpg'); 
+                background-size: cover;
+                background-position: center;
+                opacity: 0.2;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 100px 0;
+            position: relative;
+            z-index: 2;
+
+            .hero-badge-wrap {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 35px;
+                .line { width: 45px; height: 2px; background-color: $steuer-silver; }
+                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $steuer-silver; }
+            }
+
+            h1 {
+                font-size: clamp(3.5rem, 8vw, 5.5rem);
+                margin-bottom: 35px;
+                line-height: 1.1;
+                color: #fff;
+                font-weight: 900;
+                span { color: $steuer-silver; display: inline-block; }
+                @media (max-width: 768px) { font-size: 2.8rem; }
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-bottom: 50px;
+                line-height: 1.8;
+                max-width: 600px;
+                @media (max-width: 768px) { font-size: 1.1rem; }
+            }
+        }
+    }
+
+    // PILLARS
+    .steuer-pillars {
+        padding: 120px 0;
+        background-color: #fcfcfc;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            @media (max-width: 992px) { grid-template-columns: 1fr; }
+        }
+
+        .pillar-card {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            transition: $transition;
+            i { font-size: 2.5rem; color: $steuer-primary; margin-bottom: 25px; display: block; }
+            h3 { font-size: 1.4rem; margin-bottom: 20px; color: $secondary-color; }
+            p { font-size: 1rem; opacity: 0.8; line-height: 1.6; }
+            &:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+        }
+    }
+
+    // SELBSTANZEIGE (Dark + Grid)
+    .steuer-disclosure {
+        padding: 120px 0;
+        background-color: $steuer-primary;
+        color: #fff;
+        @include grid-overlay;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+            @media (max-width: 768px) { gap: 40px; }
+        }
+
+        h2 { color: #fff; border: none; font-size: 3rem; margin-bottom: 30px; @media (max-width: 768px) { font-size: 2.2rem; } }
+        .feature-list {
+            list-style: none;
+            li { display: flex; gap: 20px; margin-bottom: 25px; i { color: $steuer-silver; font-size: 1.2rem; } span { font-size: 1.1rem; opacity: 0.9; } }
+        }
+        .disclosure-image { 
+            img { width: 100%; border-radius: 8px; filter: brightness(0.8); box-shadow: 0 30px 60px rgba(0,0,0,0.3); } 
+            @media (max-width: 992px) { margin-bottom: 40px; }
+        }
+    }
+
+    // BETRIEBSPRÜFUNG (Light - Card Layout)
+    .steuer-audit {
+        padding: 120px 0;
+        background-color: #fff;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .audit-grid-new {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            @media (max-width: 992px) { grid-template-columns: 1fr; }
+
+            .audit-card {
+                padding: 40px;
+                background: #f8f9fa;
+                border: 1px solid rgba(0,0,0,0.05);
+                border-radius: 8px;
+                transition: $transition;
+                text-align: center;
+
+                .card-icon {
+                    width: 70px;
+                    height: 70px;
+                    background: $steuer-primary;
+                    color: #fff;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 auto 25px;
+                    font-size: 1.5rem;
+                }
+
+                h4 { margin-bottom: 15px; font-size: 1.2rem; }
+                p { font-size: 0.95rem; opacity: 0.8; margin-bottom: 0; }
+
+                &:hover {
+                    background: #fff;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+
+    // STEUERFAHNDUNG (Dark + Grid)
+    .steuer-investigation {
+        padding: 120px 0;
+        background-color: $steuer-primary;
+        color: #fff;
+        @include grid-overlay;
+        @media (max-width: 768px) { padding: 60px 0; }
+
+        .invest-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 60px;
+            border-radius: 12px;
+            border: 1px solid rgba($steuer-silver, 0.2);
+            backdrop-filter: blur(10px);
+            @media (max-width: 768px) { padding: 40px 25px; }
+            h2 { color: #fff; text-align: center; margin-bottom: 40px; border: none; font-size: 2.8rem; @media (max-width: 768px) { font-size: 2rem; } }
+            
+            .invest-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+                @media (max-width: 992px) { grid-template-columns: 1fr; }
+                .invest-item {
+                    text-align: center;
+                    i { font-size: 2.5rem; color: $steuer-silver; margin-bottom: 20px; display: block; }
+                    h4 { font-size: 1.2rem; margin-bottom: 15px; color: #fff; }
+                    p { font-size: 0.95rem; opacity: 0.7; }
+                }
+            }
+        }
+    }
+
+    // ZOLLSTRAFRECHT (Light Section / Dark Card)
+    .steuer-customs {
+        padding: 120px 0;
+        background-color: #fff;
+        color: $text-color;
+        @media (max-width: 768px) { padding: 60px 0; }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+        }
+
+        h2 { color: $secondary-color; border: none; font-size: 2.8rem; margin-bottom: 30px; @media (max-width: 768px) { font-size: 2rem; } }
+        
+        .feature-list {
+            list-style: none;
+            li { 
+                display: flex; 
+                gap: 15px; 
+                margin-bottom: 20px; 
+                i { color: $steuer-primary; } 
+                span { opacity: 0.8; }
+            }
+        }
+
+        .customs-card {
+            background-color: $steuer-primary;
+            @include grid-overlay;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            color: #fff;
+            
+            i { font-size: 3.5rem; color: $steuer-silver; margin-bottom: 30px; display: block; }
+            h3 { color: #fff; margin-bottom: 20px; font-size: 1.6rem; }
+            p { opacity: 0.8; margin-bottom: 0; line-height: 1.8; }
+        }
+    }
+
+    // CTA
+    .steuer-cta {
+        padding: 120px 0;
+        .cta-box {
+            background: $steuer-primary;
+            padding: 80px;
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+            @include grid-overlay;
+            @media (max-width: 768px) { padding: 50px 30px; }
+            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            .cta-actions { display: flex; justify-content: center; gap: 40px; margin-top: 40px; @media (max-width: 768px) { flex-direction: column; gap: 20px; } }
+        }
+    }
+
+    // BUTTONS
+    .btn-steuer {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        background-color: $steuer-primary;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: $transition;
+        &:hover { background-color: lighten($steuer-primary, 10%); transform: translateY(-3px); color: #fff; }
+    }
+
+    .btn-steuer-silver {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        background-color: $steuer-silver;
+        color: $steuer-primary;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 800;
+        transition: $transition;
+        &:hover { background-color: #fff; transform: translateY(-3px); color: $steuer-primary; }
+    }
+}

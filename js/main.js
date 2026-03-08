@@ -50,15 +50,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+        if (question) {
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
 
-            faqItems.forEach(i => i.classList.remove('active'));
+                // Close other items
+                faqItems.forEach(i => i.classList.remove('active'));
 
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
 
     // Stats Counter Animation

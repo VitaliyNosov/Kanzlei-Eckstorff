@@ -1,0 +1,431 @@
+@import 'variables';
+
+.wirtschaft-page {
+    $wirtschaft-primary: #1A2D42; // Deep Corporate Navy
+    $wirtschaft-accent: #365A72;  // Brand Blue
+    $wirtschaft-silver: #A8B2BD; // Silver/Steel accent
+    
+    // DECORATIVE GRID PATTERN
+    @mixin grid-overlay {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 L40 40 L40 0' fill='none' stroke='white' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+            z-index: 1;
+            pointer-events: none;
+        }
+        & > * { position: relative; z-index: 2; }
+    }
+
+    // HERO SECTION
+    .wirtschaft-hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        background-color: #0c151f; /* Darker base for better contrast */
+        overflow: hidden;
+        padding: 0;
+
+        .hero-bg-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba($wirtschaft-primary, 1), rgba($secondary-color, 0.9));
+            z-index: 1;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/bg_arch.jpg'); 
+                background-size: cover;
+                background-position: center;
+                opacity: 0.25;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 100px 0;
+
+            .hero-badge-wrap {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 35px;
+
+                .line { width: 45px; height: 2px; background-color: $wirtschaft-silver; }
+                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $wirtschaft-silver; }
+            }
+
+            h1 {
+                font-size: clamp(3.5rem, 8vw, 5.5rem);
+                margin-bottom: 35px;
+                line-height: 1.1;
+                color: #fff;
+                font-weight: 900;
+                span { color: $wirtschaft-silver; display: inline-block; }
+                @media (max-width: 768px) { font-size: 3.5rem; }
+            }
+
+            p {
+                font-size: 1.3rem;
+                color: rgba(255, 255, 255, 0.75);
+                margin-bottom: 50px;
+                line-height: 1.8;
+                max-width: 600px;
+                @media (max-width: 768px) { font-size: 1.1rem; }
+            }
+        }
+    }
+
+    // PILLARS SECTION
+    .wirtschaft-pillars {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: #fcfcfc;
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            @media (max-width: 992px) { grid-template-columns: 1fr; }
+        }
+
+        .pillar-card {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 4px;
+            border-bottom: 4px solid transparent;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            transition: $transition;
+
+            i { font-size: 2.5rem; color: $wirtschaft-primary; margin-bottom: 25px; display: block; }
+            h3 { font-size: 1.4rem; margin-bottom: 20px; color: $secondary-color; }
+            p { font-size: 1rem; color: $text-color; margin-bottom: 0; opacity: 0.8; }
+
+            &:hover {
+                transform: translateY(-10px);
+                border-color: $wirtschaft-primary;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            }
+        }
+    }
+
+    // COMPLIANCE SECTION
+    .wirtschaft-compliance {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: $wirtschaft-primary;
+        color: #fff;
+        @include grid-overlay;
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+            @media (max-width: 768px) { gap: 40px; }
+        }
+
+        h2 { color: #fff; border: none; font-size: 3rem; margin-bottom: 30px; &::after { display: none; } 
+            @media (max-width: 768px) { font-size: 2.2rem; }
+        }
+        .feature-list {
+            list-style: none;
+            li {
+                margin-bottom: 25px;
+                display: flex;
+                gap: 20px;
+                i { color: $wirtschaft-silver; font-size: 1.2rem; margin-top: 5px; }
+                span { font-size: 1.1rem; opacity: 0.9; }
+            }
+        }
+
+        .compliance-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            img { width: 100%; display: block; filter: brightness(0.8); }
+        }
+    }
+
+
+    // STRATEGY SECTION
+    .wirtschaft-strategy {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: #fff;
+        
+        .strategy-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: linear-gradient(90deg, rgba($wirtschaft-silver, 0.1), $wirtschaft-silver, rgba($wirtschaft-silver, 0.1));
+                z-index: 1;
+                @media (max-width: 992px) { display: none; }
+            }
+
+            @media (max-width: 992px) { grid-template-columns: 1fr 1fr; }
+            @media (max-width: 576px) { grid-template-columns: 1fr; }
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+
+            .step-circle {
+                width: 80px;
+                height: 80px;
+                background-color: #fff;
+                border: 2px solid $wirtschaft-silver;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 30px;
+                font-family: $font-heading;
+                font-size: 1.5rem;
+                font-weight: 900;
+                color: $wirtschaft-primary;
+                transition: $transition;
+            }
+
+            h4 { font-size: 1.2rem; margin-bottom: 15px; color: $secondary-color; }
+            p { font-size: 0.95rem; opacity: 0.7; line-height: 1.6; padding: 0 10px; }
+
+            &:hover .step-circle {
+                background-color: $wirtschaft-primary;
+                border-color: $wirtschaft-primary;
+                color: #fff;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    // LEADERSHIP PROTECTION
+    .wirtschaft-leadership {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: #f8f9fa;
+
+        .leadership-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+            @media (max-width: 768px) { gap: 40px; }
+        }
+
+        .leadership-image {
+            position: relative;
+            img { width: 100%; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+            .image-accent-border {
+                position: absolute;
+                top: -30px;
+                left: -30px;
+                width: 100px;
+                height: 100px;
+                border-top: 4px solid $wirtschaft-silver;
+                border-left: 4px solid $wirtschaft-silver;
+                @media (max-width: 768px) { top: -15px; left: -15px; width: 60px; height: 60px; }
+            }
+        }
+
+        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; &::after { display: none; } span { color: $wirtschaft-silver; }
+            @media (max-width: 768px) { font-size: 2rem; }
+        }
+        p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 40px; opacity: 0.8; @media (max-width: 768px) { font-size: 1.1rem; } }
+
+        .feature-grid-small {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            @media (max-width: 480px) { grid-template-columns: 1fr; }
+
+            .f-item {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                padding: 20px;
+                background: #fff;
+                border-radius: 4px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+                transition: $transition;
+                i { color: $wirtschaft-primary; font-size: 1.2rem; }
+                span { font-weight: 600; font-size: 0.95rem; color: $secondary-color; }
+                &:hover { transform: translateX(5px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+            }
+        }
+    }
+
+
+    // REPUTATION SECTION
+    .wirtschaft-reputation {
+        padding: 120px 0;
+        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: #fff;
+
+        .reputation-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 100px;
+            align-items: center;
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
+            @media (max-width: 768px) { gap: 40px; }
+        }
+
+        .rep-content {
+            .badge { display: inline-block; padding: 6px 15px; background: rgba($wirtschaft-primary, 0.1); color: $wirtschaft-primary; border-radius: 4px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
+            h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; span { color: $wirtschaft-silver; }
+                @media (max-width: 768px) { font-size: 2rem; }
+            }
+            p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 40px; @media (max-width: 768px) { font-size: 1.1rem; } }
+            
+            .rep-list {
+                list-style: none;
+                li { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-weight: 600; color: $secondary-color; i { color: $wirtschaft-silver; } }
+            }
+        }
+
+        .rep-card {
+            background: $wirtschaft-primary;
+            @include grid-overlay;
+            padding: 80px;
+            border-radius: 12px;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+            @media (max-width: 768px) { padding: 40px 25px; }
+            
+            i { font-size: 3.5rem; color: $wirtschaft-silver; margin-bottom: 30px; display: block; }
+            h3 { font-size: 1.6rem; margin-bottom: 20px; color: #fff; }
+            p { opacity: 0.7; line-height: 1.7; }
+        }
+    }
+
+    // FINAL CTA BOX
+    .wirtschaft-cta {
+        padding-bottom: 120px;
+        .cta-box {
+            position: relative;
+            background: $wirtschaft-primary;
+            @include grid-overlay;
+            padding: 80px;
+            border-radius: 12px;
+            color: #fff;
+            overflow: hidden;
+            @media (max-width: 768px) { padding: 50px 30px; }
+
+            .cta-bg-shape {
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 600px;
+                height: 600px;
+                background: radial-gradient(circle, rgba($wirtschaft-silver, 0.1) 0%, transparent 70%);
+                z-index: 1;
+            }
+
+            .cta-content { position: relative; z-index: 2; text-align: center; }
+            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            p { font-size: 1.25rem; opacity: 0.8; margin-bottom: 50px; @media (max-width: 768px) { font-size: 1.1rem; } }
+
+            .cta-actions {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                @media (max-width: 768px) { flex-direction: column; gap: 20px; }
+
+                .btn-wirtschaft-white {
+                    padding: 18px 45px;
+                    background: #fff;
+                    color: $wirtschaft-primary;
+                    text-decoration: none;
+                    border-radius: 4px;
+                    font-weight: 800;
+                    font-size: 1.1rem;
+                    transition: $transition;
+                    &:hover { background: $wirtschaft-silver; color: #fff; transform: translateY(-3px); }
+                }
+
+                .cta-phone { font-size: 1.3rem; font-weight: 700; i { color: $wirtschaft-silver; margin-right: 10px; } }
+            }
+        }
+    }
+
+    .btn-wirtschaft {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        background-color: $wirtschaft-primary;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 700;
+        transition: $transition;
+        box-shadow: 0 4px 15px rgba($wirtschaft-primary, 0.2);
+
+        &:hover {
+            background-color: lighten($wirtschaft-primary, 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba($wirtschaft-primary, 0.3);
+            color: #fff;
+        }
+    }
+
+    .btn-wirtschaft-silver {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 35px;
+        background-color: $wirtschaft-silver;
+        color: $wirtschaft-primary;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 800;
+        transition: $transition;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            color: $wirtschaft-primary;
+        }
+    }
+}

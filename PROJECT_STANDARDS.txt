@@ -1,0 +1,32 @@
+PROJECT STANDARDS - KANZLEI ECKSTORFF
+
+1. OVERALL PROGRESS
+-------------------
+[X] Main Homepage (index.html): Core structure and global styles.
+[X] Kryptostrafrecht Page: First specialized landing page.
+[X] Wirtschaftsstrafrecht Page: Expanded to 8+ unique sections, premium styling.
+[X] Steuerstrafrecht Page: Completed according to "Golden Formula".
+[X] Medienstrafrecht Page: Completed with creative visual elements.
+[X] Sozialversicherungsbeiträge: Completed according to "Golden Formula".
+
+2. THE "GOLDEN FORMULA" (REQUIREMENTS)
+--------------------------------------
+- Minimum 8 Unique Sections per page.
+- No content duplication between landing pages.
+- Rhythmic color flow: Alternating Dark (#1A2D42) and Light (White) sections.
+- Decorative Grid Pattern: Mandatory SVG overlay on all dark #1A2D42 backgrounds.
+- High Button Contrast: 
+    - Dark backgrounds -> Silver buttons ($wirtschaft-silver).
+    - Light backgrounds -> Navy buttons ($wirtschaft-primary).
+- Mobile Optimization: 
+    - Section padding reduced from 120px to 60px.
+    - Heading (h2) size reduced from 3rem to 2rem.
+    - Grid gaps reduced to 40px for narrow screens.
+- Global Synchronization: Use identical Header, Footer, and "Aktuelles" (Blog) blocks.
+
+3. PENDING TASKS
+----------------
+- Implement Steuerstrafrecht landing page.
+- Implement Medienstrafrecht landing page.
+- Link all new pages from index.html Hero slider.
+- Perform final mobile responsiveness audit for all pages.

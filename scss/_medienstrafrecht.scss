@@ -5,9 +5,22 @@
     $media-accent: #365A72;
     $media-silver: #A8B2BD;
 
+    // UNIFIED LARGE H2 STYLE
+    h2 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 35px;
+        @media (max-width: 992px) { font-size: 2.8rem; }
+        @media (max-width: 768px) { font-size: 2.3rem; margin-bottom: 25px; }
+        @media (max-width: 480px) { font-size: 1.85rem; }
+        span { color: $media-silver; }
+    }
+
     // DECORATIVE GRID PATTERN (Unique for Media)
     @mixin grid-overlay-media {
         position: relative;
+        & > * { position: relative; z-index: 2; }
         &::before {
             content: '';
             position: absolute;
@@ -19,7 +32,6 @@
             z-index: 1;
             pointer-events: none;
         }
-        & > * { position: relative; z-index: 2; }
     }
 
     // HERO SECTION
@@ -68,8 +80,23 @@
                 align-items: center;
                 gap: 15px;
                 margin-bottom: 35px;
-                .line { width: 45px; height: 2px; background-color: $media-silver; }
-                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $media-silver; }
+                .line { 
+                    width: 45px; 
+                    height: 2px; 
+                    background-color: $media-silver; 
+                    @media (max-width: 480px) { width: 30px; }
+                }
+                span { 
+                    text-transform: uppercase; 
+                    letter-spacing: 4px; 
+                    font-size: 0.9rem; 
+                    font-weight: 800; 
+                    color: $media-silver; 
+                    @media (max-width: 480px) {
+                        letter-spacing: 2px;
+                        font-size: 0.75rem;
+                    }
+                }
             }
 
             h1 {
@@ -133,7 +160,7 @@
             @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
         }
 
-        h2 { color: #fff; font-size: 3rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2.2rem; } }
+        h2 { color: #fff; border: none; }
         .feature-list {
             list-style: none;
             li { display: flex; gap: 15px; margin-bottom: 20px; i { color: $media-silver; font-size: 1.1rem; } span { font-size: 1.1rem; opacity: 0.9; } }
@@ -155,7 +182,7 @@
             @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; display: flex; flex-direction: column-reverse; }
         }
 
-        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2rem; } }
+        h2 { border: none; }
         .rep-image { position: relative; img { width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); } }
     }
 
@@ -166,6 +193,7 @@
         color: #fff;
         @include grid-overlay-media;
         @media (max-width: 768px) { padding: 60px 0; }
+        h2 { color: #fff; border: none; }
 
         .cyber-grid {
             display: grid;
@@ -201,7 +229,7 @@
             @media (max-width: 992px) { grid-template-columns: 1fr; gap: 80px; }
         }
 
-        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2rem; } }
+        h2 { border: none; }
         
         .feature-list {
             list-style: none;
@@ -303,7 +331,7 @@
             text-align: center;
             @include grid-overlay-media;
             @media (max-width: 768px) { padding: 50px 30px; }
-            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            h2 { color: #fff; border: none; margin-bottom: 20px; }
             .cta-actions { display: flex; justify-content: center; gap: 40px; margin-top: 40px; @media (max-width: 768px) { flex-direction: column; gap: 20px; } }
         }
     }

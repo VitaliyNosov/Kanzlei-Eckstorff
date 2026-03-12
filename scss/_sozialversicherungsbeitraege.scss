@@ -22,6 +22,16 @@
         & > * { position: relative; z-index: 2; }
     }
 
+    h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        @media (max-width: 768px) { font-size: 2.2rem; }
+        @media (max-width: 480px) { font-size: 1.8rem; margin-bottom: 20px; }
+        span { color: $sozial-silver; }
+    }
+
     // HERO SECTION
     .sozial-hero {
         position: relative;
@@ -68,12 +78,34 @@
                 align-items: center;
                 gap: 15px;
                 margin-bottom: 35px;
-                .line { width: 45px; height: 2px; background-color: $sozial-silver; }
-                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $sozial-silver; }
+                
+                @media (max-width: 480px) {
+                    gap: 10px;
+                    margin-bottom: 25px;
+                }
+
+                .line { 
+                    width: 45px; 
+                    height: 2px; 
+                    background-color: $sozial-silver; 
+                    @media (max-width: 480px) { width: 30px; }
+                }
+                span { 
+                    text-transform: uppercase; 
+                    letter-spacing: 4px; 
+                    font-size: 0.9rem; 
+                    font-weight: 800; 
+                    color: $sozial-silver;
+                    @media (max-width: 480px) {
+                        letter-spacing: 2px;
+                        font-size: 0.75rem;
+                    }
+                }
             }
 
             h1 {
                 font-size: clamp(2.8rem, 6vw, 4.5rem);
+                @media (max-width: 480px) { font-size: 2.2rem; }
                 margin-bottom: 35px;
                 line-height: 1.1;
                 color: #fff;
@@ -95,7 +127,8 @@
     .sozial-pillars {
         padding: 120px 0;
         background-color: #fff;
-        @media (max-width: 768px) { padding: 60px 0; }
+        @media (max-width: 768px) { padding: 80px 0; }
+        @media (max-width: 480px) { padding: 60px 0; }
 
         .pillars-grid {
             display: grid;
@@ -107,6 +140,7 @@
         .pillar-card {
             background: #fcfcfc;
             padding: 50px 40px;
+            @media (max-width: 480px) { padding: 35px 25px; }
             border-bottom: 4px solid transparent;
             box-shadow: 0 10px 40px rgba(0,0,0,0.02);
             transition: $transition;
@@ -128,7 +162,8 @@
         background-color: $sozial-primary;
         color: #fff;
         @include grid-overlay-sozial;
-        @media (max-width: 768px) { padding: 60px 0; }
+        @media (max-width: 768px) { padding: 80px 0; }
+        @media (max-width: 480px) { padding: 60px 0; }
 
         .grid-2 {
             display: grid;
@@ -138,7 +173,7 @@
             @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
         }
 
-        h2 { color: #fff; font-size: 3rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2.2rem; } }
+        h2 { color: #fff; border: none; }
         .feature-list {
             list-style: none;
             li { display: flex; gap: 15px; margin-bottom: 20px; i { color: $sozial-silver; } span { opacity: 0.9; } }
@@ -158,10 +193,40 @@
             gap: 100px;
             align-items: center;
             @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; display: flex; flex-direction: column-reverse; }
+            @media (max-width: 480px) { gap: 40px; }
         }
 
-        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; @media (max-width: 768px) { font-size: 2rem; } }
+        h2 { border: none; }
         .schein-image { position: relative; img { width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); } }
+
+        .schein-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 35px;
+            
+            @media (max-width: 576px) {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-top: 25px;
+            }
+
+            .f-item {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                color: $secondary-color;
+                
+                @media (max-width: 480px) {
+                    font-size: 0.9rem;
+                }
+                
+                i {
+                    color: $sozial-primary;
+                    margin-right: 12px;
+                }
+            }
+        }
     }
 
     // ERMITTLUNG (Dark + Grid)
@@ -170,7 +235,10 @@
         background-color: $sozial-primary;
         color: #fff;
         @include grid-overlay-sozial;
-        @media (max-width: 768px) { padding: 60px 0; }
+        @media (max-width: 768px) { padding: 80px 0; }
+        @media (max-width: 480px) { padding: 60px 0; }
+
+        h2 { color: #fff; }
 
         .invest-card {
             background: rgba(255, 255, 255, 0.03);
@@ -178,6 +246,7 @@
             border-radius: 12px;
             border: 1px solid rgba($sozial-silver, 0.1);
             @media (max-width: 768px) { padding: 40px 25px; }
+            @media (max-width: 480px) { padding: 30px 20px; }
 
             .invest-grid {
                 display: grid;
@@ -196,22 +265,73 @@
     // INDUSTRY FOCUS (Light)
     .sozial-industry {
         padding: 120px 0;
-        @media (max-width: 768px) { padding: 60px 0; }
+        background-color: #fff;
+        @media (max-width: 768px) { padding: 80px 0; }
+        @media (max-width: 480px) { padding: 60px 0; }
+
         .industry-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            @media (max-width: 992px) { grid-template-columns: 1fr 1fr; }
+            gap: 30px;
+            @media (max-width: 1200px) { grid-template-columns: 1fr 1fr; }
             @media (max-width: 576px) { grid-template-columns: 1fr; }
+
             .ind-card {
-                padding: 30px;
+                padding: 45px 35px;
+                @media (max-width: 480px) { padding: 30px 20px; }
                 background: #fff;
-                border: 1px solid #eee;
-                text-align: center;
-                transition: $transition;
-                i { font-size: 2rem; color: $sozial-primary; margin-bottom: 15px; display: block; }
-                span { font-weight: 700; color: $secondary-color; }
-                &:hover { border-color: $sozial-primary; background: #fafafa; }
+                border: 1px solid #f0f0f0;
+                border-radius: 8px;
+                text-align: left;
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                .ind-icon {
+                    width: 60px;
+                    height: 60px;
+                    background: rgba($sozial-primary, 0.05);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 25px;
+                    transition: $transition;
+
+                    i { 
+                        font-size: 1.8rem; 
+                        color: $sozial-primary; 
+                        margin-bottom: 0; 
+                    }
+                }
+
+                h3 { 
+                    font-size: 1.25rem; 
+                    font-weight: 700; 
+                    color: $secondary-color; 
+                    margin-bottom: 15px; 
+                    line-height: 1.3;
+                }
+
+                p { 
+                    font-size: 0.95rem; 
+                    color: rgba($text-color, 0.7); 
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                }
+
+                &:hover { 
+                    transform: translateY(-8px);
+                    border-color: transparent;
+                    background: #fff;
+                    box-shadow: 0 20px 40px rgba($secondary-color, 0.08);
+
+                    .ind-icon {
+                        background: $sozial-primary;
+                        i { color: #fff; }
+                    }
+                }
             }
         }
     }
@@ -227,7 +347,7 @@
             text-align: center;
             @include grid-overlay-sozial;
             @media (max-width: 768px) { padding: 50px 30px; }
-            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            h2 { color: #fff; border: none; margin-bottom: 20px; }
             .cta-actions { display: flex; justify-content: center; gap: 40px; margin-top: 40px; @media (max-width: 768px) { flex-direction: column; gap: 20px; } }
         }
     }

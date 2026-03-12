@@ -5,9 +5,22 @@
     $wirtschaft-accent: #365A72;  // Brand Blue
     $wirtschaft-silver: #A8B2BD; // Silver/Steel accent
     
+    // UNIFIED LARGE H2 STYLE
+    h2 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 35px;
+        @media (max-width: 992px) { font-size: 2.8rem; }
+        @media (max-width: 768px) { font-size: 2.3rem; margin-bottom: 25px; }
+        @media (max-width: 480px) { font-size: 1.85rem; }
+        span { color: $wirtschaft-silver; }
+    }
+
     // DECORATIVE GRID PATTERN
     @mixin grid-overlay {
         position: relative;
+        & > * { position: relative; z-index: 2; }
         &::before {
             content: '';
             position: absolute;
@@ -19,7 +32,6 @@
             z-index: 1;
             pointer-events: none;
         }
-        & > * { position: relative; z-index: 2; }
     }
 
     // HERO SECTION
@@ -73,8 +85,23 @@
                 gap: 15px;
                 margin-bottom: 35px;
 
-                .line { width: 45px; height: 2px; background-color: $wirtschaft-silver; }
-                span { text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; font-weight: 800; color: $wirtschaft-silver; }
+                .line { 
+                    width: 45px; 
+                    height: 2px; 
+                    background-color: $wirtschaft-silver; 
+                    @media (max-width: 480px) { width: 30px; }
+                }
+                span { 
+                    text-transform: uppercase; 
+                    letter-spacing: 4px; 
+                    font-size: 0.9rem; 
+                    font-weight: 800; 
+                    color: $wirtschaft-silver; 
+                    @media (max-width: 480px) {
+                        letter-spacing: 2px;
+                        font-size: 0.75rem;
+                    }
+                }
             }
 
             h1 {
@@ -107,7 +134,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            @media (max-width: 992px) { grid-template-columns: 1fr; }
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 20px; }
         }
 
         .pillar-card {
@@ -143,13 +170,11 @@
             grid-template-columns: 1fr 1fr;
             gap: 100px;
             align-items: center;
-            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 60px; }
-            @media (max-width: 768px) { gap: 40px; }
+            @media (max-width: 992px) { grid-template-columns: 1fr; gap: 50px; }
+            @media (max-width: 768px) { gap: 35px; }
         }
 
-        h2 { color: #fff; border: none; font-size: 3rem; margin-bottom: 30px; &::after { display: none; } 
-            @media (max-width: 768px) { font-size: 2.2rem; }
-        }
+        h2 { color: #fff; border: none; &::after { display: none; } }
         .feature-list {
             list-style: none;
             li {
@@ -264,9 +289,7 @@
             }
         }
 
-        h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; &::after { display: none; } span { color: $wirtschaft-silver; }
-            @media (max-width: 768px) { font-size: 2rem; }
-        }
+        h2 { border: none; &::after { display: none; } }
         p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 40px; opacity: 0.8; @media (max-width: 768px) { font-size: 1.1rem; } }
 
         .feature-grid-small {
@@ -309,9 +332,7 @@
 
         .rep-content {
             .badge { display: inline-block; padding: 6px 15px; background: rgba($wirtschaft-primary, 0.1); color: $wirtschaft-primary; border-radius: 4px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; }
-            h2 { font-size: 2.8rem; margin-bottom: 30px; border: none; span { color: $wirtschaft-silver; }
-                @media (max-width: 768px) { font-size: 2rem; }
-            }
+            h2 { border: none; &::after { display: none; } }
             p { font-size: 1.15rem; line-height: 1.8; margin-bottom: 40px; @media (max-width: 768px) { font-size: 1.1rem; } }
             
             .rep-list {
@@ -360,7 +381,7 @@
             }
 
             .cta-content { position: relative; z-index: 2; text-align: center; }
-            h2 { font-size: 3rem; color: #fff; border: none; margin-bottom: 20px; @media (max-width: 768px) { font-size: 2.2rem; } }
+            h2 { color: #fff; border: none; }
             p { font-size: 1.25rem; opacity: 0.8; margin-bottom: 50px; @media (max-width: 768px) { font-size: 1.1rem; } }
 
             .cta-actions {
